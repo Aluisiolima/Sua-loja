@@ -5,10 +5,10 @@ interface CabecarioPros {
 
 export const Cabecario:React.FC<CabecarioPros> = ({nomeEmpresa}) => {
     return(
-        <nav className="navbar bg-body-tertiary">
+        <nav className="navbar bg-dark">
             <div className="container">
-                <h1>{nomeEmpresa}</h1>
-                <button className="btn btn-outline-primary"><i className="bi bi-search"></i></button>
+                <h1 className="text-light">{nomeEmpresa}</h1>
+                <button className="btn btn-outline-light"><i className="bi bi-search"></i></button>
             </div>
         </nav>
     );
