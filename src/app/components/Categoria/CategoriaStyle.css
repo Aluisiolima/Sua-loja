@@ -1,0 +1,14 @@
+.card-scroll {
+    white-space: nowrap; /* Mantém os elementos em linha única */
+    padding-bottom: 10px; /* Espaçamento na base */
+  }
+  
+  .card {
+    flex: 0 0 auto; /* Evita que os cards encolham */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
