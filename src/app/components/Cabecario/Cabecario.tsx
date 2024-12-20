@@ -1,5 +1,5 @@
 
-interface CabecarioPros {
+type CabecarioPros = {
     nomeEmpresa : string;
 }
 

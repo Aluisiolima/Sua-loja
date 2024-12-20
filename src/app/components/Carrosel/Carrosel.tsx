@@ -1,10 +1,10 @@
 import "./Carrosel.css";
 
-interface ImgCarrosel {
+type CarroselPros = {
     img : string[];
 }
 
-export const Carrosel:React.FC<ImgCarrosel> = ({img}) => {
+export const Carrosel:React.FC<CarroselPros> = ({img}) => {
     return(
         <div className="container mt-3">
             <div id="carouselExampleIndicators" className="carousel slide">

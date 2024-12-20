@@ -1,19 +1,30 @@
 import "./CategoriaStyle.css";
 
-interface CategoriaPros {
-    categorias : string[];
-}
+type CategoriaData = {
+    caminho: string;
+    nome : string;
+};
 
-export const Categoria:React.FC<CategoriaPros>  = ({categorias}) => {
+type CategoriaPros = {
+    data : CategoriaData[];
+};
+
+export const Categoria:React.FC<CategoriaPros>  = ({data}) => {
+    if (data === null) {
+        return null;
+    }
     return (
         <div className="container text-center mt-2">
             <p className="row text-start">Categoria:</p>
             <div className="d-flex overflow-auto card-scroll">
                 {
-                    categorias.map((imgCatergoria, index) => (
-                        <div className="col-2">
-                            <div className="card mx-2 text-center" style={{ minWidth: '150px' }}>
-                                <img src={imgCatergoria} alt={ `Categoria de n°${index}`} className="card-img" />
+                    data.map((intem, index) => (
+                        <div className="col-3">
+                            <div className="card mx-2 text-center">
+                                <img src={intem.caminho} alt={ `Categoria de n°${index}`} className="card-img" />
+                                <div className="card-body p-0 m-0">
+                                    <p className="p-0 m-0 fs-5">{intem.nome}</p>
+                                </div> 
                             </div>
                         </div>
                     ))
@@ -21,4 +32,4 @@ export const Categoria:React.FC<CategoriaPros>  = ({categorias}) => {
             </div>
         </div>
     );
-}
+};
