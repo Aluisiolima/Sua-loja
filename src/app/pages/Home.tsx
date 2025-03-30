@@ -1,28 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Cabecario } from "../components/Cabecario/Cabecario";
-// import { Categoria } from "../components/Categoria/Categoria";
-import { Produtos } from "../components/Produtos/Produtos";
-import fetchApi from "../utils/req";
-
-type produto = {
-    id:number,
-    nome:string,
-    valor:number,
-    desconto:number,
-    estoque:number,
-    imgPath:string
-}
+import { fetchApi } from "../utils/req";
+import { Catalago } from "../components/Catalago/Catalago";
 
 interface Empresa {
     id: number,
     nome: string,
-    endereco: string,
     facebook:string | null,
     instagram:string | null,
     status:string,
     whatsapp:string,
-    produtos: produto[],
 }
 
 export const Home: React.FC = () => {
@@ -32,7 +20,7 @@ export const Home: React.FC = () => {
     useEffect(() => {
         const getDates = async () => {
             try {
-                const result = await fetchApi(null,"GET",`${process.env.REACT_APP_LINK_API}/empresa/${id}`);
+                const result = await fetchApi(null,"GET",`${process.env.REACT_APP_LINK_API}/empresa/${id}/name`);
                 setDate(result);
             } catch (error) {
                 console.error(error)
@@ -49,9 +37,7 @@ export const Home: React.FC = () => {
     return (
         <div className="h-100">
             <Cabecario nomeEmpresa={date?.nome || "Carregando...."}></Cabecario>
-            
-            {/* <Categoria data={img2}></Categoria> */}
-            <Produtos data={date?.produtos || null}></Produtos>
+            <Catalago></Catalago>
         </div>
     );
 }

@@ -1,4 +1,4 @@
-async function fetchApi(data: []|null, method: string = "GET", url: string) {
+ export async function fetchApi(data: []|null, method: string = "GET", url: string) {
     try {
         const token = sessionStorage.getItem("token");
 
@@ -29,4 +29,3 @@ async function fetchApi(data: []|null, method: string = "GET", url: string) {
     }
 }
 
-export default fetchApi;
