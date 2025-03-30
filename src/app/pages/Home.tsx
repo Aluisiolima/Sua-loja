@@ -3,15 +3,7 @@ import { useParams } from "react-router-dom";
 import { Cabecario } from "../components/Cabecario/Cabecario";
 import { fetchApi } from "../utils/req";
 import { Catalago } from "../components/Catalago/Catalago";
-
-interface Empresa {
-    id: number,
-    nome: string,
-    facebook:string | null,
-    instagram:string | null,
-    status:string,
-    whatsapp:string,
-}
+import { Empresa } from "../types/empresa.types";
 
 export const Home: React.FC = () => {
     const { id } = useParams();
