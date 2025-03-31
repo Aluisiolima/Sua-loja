@@ -28,7 +28,7 @@ export const Home: React.FC = () => {
 
     return (
         <div className="h-100">
-            <Cabecario nomeEmpresa={date?.nome || "Carregando...."}></Cabecario>
+            <Cabecario data={date}></Cabecario>
             <Catalago></Catalago>
         </div>
     );

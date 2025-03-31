@@ -3,7 +3,7 @@ import img from "../../assets/img/images.png";
 import { Produto } from "../../types/produto.types";
 
 export const ProdutoCard: React.FC<{ produto: Produto }> = ({ produto }) => {
-    const [imageSrc, setImageSrc] = useState(produto.imgPath || img);
+    const [imageSrc, setImageSrc] = useState(produto.arquivos[0]?.path || img);
 
     return (
         <div className="card col-5 col-lg-4 col-xl-3 m-auto  mb-4 bg-light  text-light shadow">
